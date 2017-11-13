@@ -38,6 +38,8 @@
 
             private function __construct() {
                 if (is_admin()) {
+                    load_plugin_textdomain('cj-aufp', false, basename(dirname(__FILE__)) .'/languages');
+
                     add_action('admin_enqueue_scripts', array($this, 'enqueueScripts'));
                     add_action('add_meta_boxes', array($this, 'addMetaBox'));
 
