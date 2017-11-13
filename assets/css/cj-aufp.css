@@ -1,0 +1,35 @@
+#cj_aufp_metabox,
+#cj_aufp_metabox * {
+    box-sizing: border-box;
+}
+
+.cj_aufp_row {
+    margin: 0 0 10px;
+}
+
+#cj_aufp_metabox label {
+    font-weight: 600;
+}
+
+.cj_aufp_row__value input {
+    width: 100%;
+}
+
+.cj_aufp_metabox__buttons {
+    overflow: hidden;
+}
+
+.cj_aufp_metabox__result {
+    display: none;
+    text-align: center;
+    margin: 0 0 10px;
+}
+
+.cj_aufp_metabox__result.e {
+    color: #dc3232;
+}
+
+.cj_aufp_metabox__result.s {
+    color: #46b450;
+    margin: 20px 0 10px;
+}
