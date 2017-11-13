@@ -8,18 +8,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: codja-add-user-from-post.php:60
-msgid "Please, enter login"
-msgstr ""
-
-#: codja-add-user-from-post.php:62
-msgid "Bad login"
-msgstr ""
-
-#: codja-add-user-from-post.php:64
-msgid "User with this login already exist"
-msgstr ""
-
 #: codja-add-user-from-post.php:68
 msgid "Please, enter first name"
 msgstr ""
@@ -46,10 +34,6 @@ msgstr ""
 
 #: codja-add-user-from-post.php:119 templates/metabox.php:26
 msgid "Add User"
-msgstr ""
-
-#: templates/metabox.php:4
-msgid "Login"
 msgstr ""
 
 #: templates/metabox.php:8
