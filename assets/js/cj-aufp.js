@@ -11,7 +11,6 @@ jQuery(document).ready(function($) {
         var sendData = {};
         sendData.action = 'cj_aufp_AddUser';
         sendData.nonce = _this.data('nonce');
-        sendData.login = cj_aufp_metabox.find('#cj_aufp__login').val();
         sendData.first_name = cj_aufp_metabox.find('#cj_aufp__first_name').val();
         sendData.last_name = cj_aufp_metabox.find('#cj_aufp__last_name').val();
         sendData.email = cj_aufp_metabox.find('#cj_aufp__email').val();

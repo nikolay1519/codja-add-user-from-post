@@ -50,19 +50,10 @@
                     $this->jsonDie(array('status' => 'access_error'));
                 }
 
-                $login = isset($_POST['login']) ? sanitize_user($_POST['login'], true) : '';
                 $first_name = isset($_POST['first_name']) ? sanitize_text_field($_POST['first_name']) : '';
                 $last_name = isset($_POST['last_name']) ? sanitize_text_field($_POST['last_name']) : '';
                 $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
                 $password = isset($_POST['password']) ? $_POST['password'] : '';
-
-                if ($login == false) {
-                    $this->jsonDie(array('status' => 'error', 'message' => __('Please, enter login', 'cj-aufp')));
-                } elseif (!validate_username($login)) {
-                    $this->jsonDie(array('status' => 'error', 'message' => __('Bad login', 'cj-aufp')));
-                } elseif (username_exists($login)) {
-                    $this->jsonDie(array('status' => 'error', 'message' => __('User with this login already exist', 'cj-aufp')));
-                }
 
                 if ($first_name == false) {
                     $this->jsonDie(array('status' => 'error', 'message' => __('Please, enter first name', 'cj-aufp')));
@@ -74,7 +65,7 @@
 
                 if (!is_email($email)) {
                     $this->jsonDie(array('status' => 'error', 'message' => __('Bad email', 'cj-aufp')));
-                } elseif (email_exists($email)) {
+                } elseif (email_exists($email) || username_exists($email)) {
                     $this->jsonDie(array('status' => 'error', 'message' => __('User with this email already exist', 'cj-aufp')));
                 }
 
@@ -83,7 +74,7 @@
                 }
 
                 $userdata = array(
-                    'user_login' => $login,
+                    'user_login' => $email,
                     'user_pass' => wp_hash_password($password),
                     'first_name' => $first_name,
                     'last_name' => $last_name,
